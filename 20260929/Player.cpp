@@ -1,0 +1,8 @@
+#include "Player.h"
+#include<iostream>
+using namespace std;
+
+Player::Player()
+{
+	total = 0;
+}
