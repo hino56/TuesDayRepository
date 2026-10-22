@@ -1,19 +1,36 @@
-#include "Player.h"
-#include "Enemy.h"
+#include"Gojo.h"
+#include"Inumaki.h"
+#include"Megumi.h"
 #include<iostream>
+using namespace std;
 
 int main(void)
 {
-	Player player;
-	Enemy enemy;
+	Gojo gojo;
+	Inumaki inumaki;
+	Megumi megumi;
 
-	Character* characters[2] = { &player,&enemy };
+	/*Sorcerer* sorcerer = &gojo;
+	Sorcerer* sorcerer = &inumaki;
+	Sorcerer* sorcerer = &megumi;*/
 
-	for (int i = 0; i < 2; i++)
+	Sorcerer* sorcerer[3] = {
+		&megumi,
+		&inumaki,
+		&gojo
+	};
+
+	/*sorcerer->ShowStatus();
+	sorcerer->SurgicalMethod();*/
+
+	for (int i = 0;i < 3;i++)
 	{
-		characters[i]->ShowStatus();
-		characters[i]->Attack();
+		sorcerer[i]->ShowStatus();
+		sorcerer[i]->SurgicalMethod();
+		cout << " " << endl;
+
 	}
+
 
 	return 0;
 }
