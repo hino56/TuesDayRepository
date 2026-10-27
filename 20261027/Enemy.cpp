@@ -9,7 +9,7 @@ Enemy::Enemy(int hp)
 
 Enemy::~Enemy() {}
 
-void Enemy::ShowStatus() const
+void Enemy::ShowHp() const
 {
 	cout << "Enemy HP:" << hp << endl;
 }

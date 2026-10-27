@@ -14,4 +14,3 @@ public:
 	static const int HP = 100;
 	static const int MIN_HP = 30;
 };
-
