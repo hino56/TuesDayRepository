@@ -1,26 +1,27 @@
 #include"Enemy.h"
 #include<iostream>
+#include<stdlib.h>
+#include<ctime>
 #include<vector>
 using namespace std;
 
 int main(void)
 {
-	/*Enemy enemy1(100);
-	Enemy enemy2(200);
-	enemy1.ShowStatus();
-	enemy2.ShowStatus();*/
+	//乱数の初期化
+	srand((unsigned int)time(NULL));
 
 	vector<Enemy>enemies;
-	enemies.push_back(Enemy(100));
-	enemies.push_back(Enemy(200));
-	enemies.push_back(Enemy(300));
-	enemies.push_back(Enemy(80));
-	enemies.push_back(Enemy(250));
 
-	//登録した内容を見てみよう
+	for (int i = 0;i < 3;i++)
+	{
+		int hp = rand() % (Enemy::HP - Enemy::MIN_HP) + Enemy::MIN_HP;
+
+		enemies.push_back(Enemy(hp));
+	}
+
 	for (const Enemy& enemy : enemies)
 	{
-		enemy.ShowStatus();
+		enemy.ShowHp();
 	}
 
 	cout << "敵の数は" << enemies.size() << endl;
