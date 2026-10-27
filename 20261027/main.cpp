@@ -19,6 +19,19 @@ int main(void)
 		enemies.push_back(Enemy(hp));
 	}
 
+	//内容確認
+	for (const Enemy& enemy : enemies)
+	{
+		enemy.ShowHp();
+	}
+
+	cout << " \n";
+
+	//消去処理
+	enemies.erase(enemies.begin() + 0);
+
+	//消去後確認
+	cout << "1体削除しました。\n";
 	for (const Enemy& enemy : enemies)
 	{
 		enemy.ShowHp();
