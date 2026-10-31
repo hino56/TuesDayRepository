@@ -13,3 +13,13 @@ void Enemy::ShowHp() const
 {
 	cout << "Enemy HP:" << hp << endl;
 }
+
+int Enemy::GetHp()const
+{
+	return hp;
+}
+
+void Enemy::Damage(int damage)
+{
+	hp -= damage;
+}

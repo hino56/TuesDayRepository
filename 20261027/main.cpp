@@ -17,6 +17,7 @@ int main(void)
 		int hp = rand() % (Enemy::HP - Enemy::MIN_HP) + Enemy::MIN_HP;
 
 		enemies.push_back(Enemy(hp));
+
 	}
 
 	//内容確認
@@ -26,12 +27,29 @@ int main(void)
 	}
 
 	cout << " \n";
+	cout << "攻撃を選択してください。\n";
 
-	//消去処理
-	enemies.erase(enemies.begin() + 0);
+	int chose;
+	cin >> chose;
+
+	int damage = rand() % (Enemy::DAMAGE - Enemy::MIN_DAMAGE) + Enemy::MIN_DAMAGE;
+	cout << "ダメージ量:" << damage << endl;
+
+	enemies[chose - 1].Damage(damage);
+
+	cout << "残りHP:\n";
+
+	int i = 0;
+	for (Enemy& enemy : enemies)
+	{
+		if (enemies[i].GetHp() <= 0)
+		{
+			enemies.erase(enemies.begin() + i);
+		}
+		i++;
+	}
 
 	//消去後確認
-	cout << "1体削除しました。\n";
 	for (const Enemy& enemy : enemies)
 	{
 		enemy.ShowHp();
